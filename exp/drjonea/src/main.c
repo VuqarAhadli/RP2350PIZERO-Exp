@@ -80,18 +80,18 @@ int main()
 	for (;;){
 
 		uint16_t rad = FRAME_HEIGHT/2-10;
-		for (int i=0; i < 6; i++){
+		for (int i=0; i < 16; i++){
 			Paint_DrawCircle(
 					FRAME_WIDTH/2,
 					FRAME_HEIGHT/2,
 					rad,
 					(uint16_t) i+1,
 					DOT_PIXEL_4X4,
-					DRAW_FILL_EMPTY);
+					1);
 			rad = rad - 20;
 		}
 
-        Paint_DrawString_EN(FRAME_WIDTH/2-50, FRAME_HEIGHT/2-10, "DrJonEA", &Font20, 0xFFFF, 0x0000);
+        Paint_DrawString_EN(FRAME_WIDTH/2-50, FRAME_HEIGHT/2-10, "CYBER.AZ", &Font20, 0xFFFF, 0x00F1);
         sleep_ms(5000);
 	}
 }
