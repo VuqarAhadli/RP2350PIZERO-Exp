@@ -73,10 +73,13 @@ int main()
 
 	setup_default_uart();
 
-	pio_set_gpio_base(DVI_DEFAULT_SERIAL_CONFIG.pio,16);
+	// Use address of the variable macro expands to
+	pio_set_gpio_base(pico_sock_cfg.pio,16);
 
 	dvi0.timing = &DVI_TIMING;
-	dvi0.ser_cfg = DVI_DEFAULT_SERIAL_CONFIG;
+
+	// Use address of the variable macro expands to
+	dvi0.ser_cfg = pico_sock_cfg;
 	dvi_init(&dvi0, next_striped_spin_lock_num(), next_striped_spin_lock_num());
 	Paint_NewImage(framebuf, FRAME_WIDTH, FRAME_HEIGHT, 0, Scale3_WHITE);
 	Paint_SetScale(3);

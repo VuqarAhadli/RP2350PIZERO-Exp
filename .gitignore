@@ -39,3 +39,9 @@
 
 # debug information files
 *.dwo
+
+# external dependencies 
+/external
+
+# build folder
+/build
